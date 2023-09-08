@@ -1,5 +1,5 @@
 #define stack_entry int
-#define MAX_STACK 100
+#define MAX_STACK 10000
 typedef struct stack{
     int top;
     stack_entry entry[MAX_STACK];
