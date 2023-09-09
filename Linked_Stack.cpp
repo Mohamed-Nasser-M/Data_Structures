@@ -1,4 +1,5 @@
 #include "Linked_Stack.h"
+#include <iostream>
 void creat_stack(linked_Stack *ps){
     ps->top= nullptr;
     ps->size=0;
