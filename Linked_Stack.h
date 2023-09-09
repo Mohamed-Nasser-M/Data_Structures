@@ -17,3 +17,4 @@ stack_entry stack_top   (linked_Stack*);
 int stack_size   (linked_Stack*);
 void clear_stack (linked_Stack*);
 void traverse_stack  (linked_Stack*,void(*)(stack_entry));
+void reverse(linked_Stack*);
