@@ -1,26 +1,26 @@
 #include "Linked_Stack.h"
-void creat_stack(Stack *ps){
+void creat_stack(linked_Stack *ps){
     ps->top= nullptr;
     ps->size=0;
 }
-int stack_full(Stack *ps){
+int stack_full(linked_Stack *ps){
     return 0;
 }
-void push(stack_entry e, Stack *ps){
+void push(stack_entry e, linked_Stack *ps){
     stack_node *pn=(StackNode*) malloc(sizeof(StackNode));
     pn->entry=e;
     pn->next=ps->top;
     ps->top=pn;
     ps->size++;
 }
-void emplace(stack_entry *e, Stack *ps){
+void emplace(stack_entry *e, linked_Stack *ps){
     stack_node *pn=(StackNode*) malloc(sizeof(StackNode));
     pn->entry=*e;
     pn->next=ps->top;
     ps->top=pn;
     ps->size++;
 }
-void pop(Stack *ps){
+void pop(linked_Stack *ps){
     if(ps->size){
         StackNode *pn;
         pn=ps->top;
@@ -29,16 +29,16 @@ void pop(Stack *ps){
         ps->size--;
     }
 }
-int stack_empty(Stack *ps){
+int stack_empty(linked_Stack *ps){
     return ps->top==NULL;
 }
-stack_entry stack_top(Stack *ps){
+stack_entry stack_top(linked_Stack *ps){
     return ps->top->entry;
 }
-int stack_size(Stack *ps){
+int stack_size(linked_Stack *ps){
     return ps->size;
 }
-void clear_stack(Stack *ps){
+void clear_stack(linked_Stack *ps){
     StackNode *pn=ps->top;
     while(pn){
         pn=pn->next;
@@ -47,7 +47,7 @@ void clear_stack(Stack *ps){
     }
     ps->size=0;
 }
-void reverse(Stack *ps){
+void reverse(linked_Stack *ps){
     StackNode *pRun1=ps->top,*pRun2=ps->top,*pSafe=ps->top;
     while(pSafe->next){
         pSafe=pSafe->next;
@@ -67,7 +67,7 @@ void reverse(Stack *ps){
     pRun1->next= nullptr;
     ps->top=pSafe;
 }
-void traverse_stack(Stack *ps, void(*pf)(stack_entry)){
+void traverse_stack(linked_Stack *ps, void(*pf)(stack_entry)){
     for(StackNode *pn=ps->top;pn;pn=pn->next)
         (*pf)(pn->entry);
 }
