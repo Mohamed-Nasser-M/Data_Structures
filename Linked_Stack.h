@@ -6,14 +6,14 @@ typedef struct StackNode{
 typedef struct stack{
     stack_node *top;
     int size;
-} Stack;
-void emplace    (stack_entry*,Stack*);
-void push   (stack_entry,Stack*);
-void pop    (Stack*);
-int stack_empty  (Stack*);
-int stack_full   (Stack*);
-void creat_stack (Stack*);
-stack_entry stack_top   (Stack*);
-int stack_size   (Stack*);
-void clear_stack (Stack*);
-void traverse_stack  (Stack*,void(*)(stack_entry));
+} linked_Stack;
+void emplace    (stack_entry*,linked_Stack*);
+void push   (stack_entry,linked_Stack*);
+void pop    (linked_Stack*);
+int stack_empty  (linked_Stack*);
+int stack_full   (linked_Stack*);
+void creat_stack (linked_Stack*);
+stack_entry stack_top   (linked_Stack*);
+int stack_size   (linked_Stack*);
+void clear_stack (linked_Stack*);
+void traverse_stack  (linked_Stack*,void(*)(stack_entry));
